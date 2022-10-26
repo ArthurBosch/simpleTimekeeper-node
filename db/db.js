@@ -5,7 +5,7 @@ dotenv.config();
 const pool = new pg.Pool({
   user: process.env.PGUSER,
   password: process.env.PGPASSWORD,
-  host: process.env.PGHOST,
+  host: "database-2.cybpuqyizaxy.eu-west-3.rds.amazonaws.com",
   port: process.env.PGPORT,
   database: process.env.PGDATABASE,
 });
