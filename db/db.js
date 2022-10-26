@@ -8,6 +8,9 @@ const pool = new pg.Pool({
   host: process.env.PGHOST,
   port: process.env.PGPORT,
   database: process.env.PGDATABASE,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 pool.connect(function (err) {
