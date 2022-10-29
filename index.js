@@ -9,7 +9,10 @@ dotenv.config();
 const app = express();
 app.use(
   cors({
-    origin: ["https://simple-timekeeper-react.vercel.app"],
+    origin: [
+      "https://simple-timekeeper-react.vercel.app",
+      "http://localhost:3000",
+    ],
     credentials: true,
   })
 );
