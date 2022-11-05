@@ -23,9 +23,8 @@ class workplaceController {
   async deleteWorkplace(req, res) {
     try {
       const workplaceId = req.params.id;
-      const query = await db.query(
-        `DELETE FROM workplace WHERE id = ${workplaceId}`
-      );
+      await db.query(`DELETE * FROM shifts WHERE workplaceid = ${workplaceId}`);
+      await db.query(`DELETE FROM workplace WHERE id = ${workplaceId}`);
       res.json({
         success: true,
         message: "workplace has been deleted!",
@@ -34,7 +33,7 @@ class workplaceController {
       console.log(err);
       res.status(500).json({
         success: false,
-        message: "error while trying to create workplace",
+        message: "error while trying to delete workplace",
       });
     }
   }
