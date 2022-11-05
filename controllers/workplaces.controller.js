@@ -23,7 +23,7 @@ class workplaceController {
   async deleteWorkplace(req, res) {
     try {
       const workplaceId = req.params.id;
-      await db.query(`DELETE * FROM shifts WHERE workplaceid = ${workplaceId}`);
+      await db.query(`DELETE * FROM shift WHERE workplaceid = ${workplaceId}`);
       await db.query(`DELETE FROM workplace WHERE id = ${workplaceId}`);
       res.json({
         success: true,
