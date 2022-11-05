@@ -95,6 +95,19 @@ class AuthController {
       });
     }
   }
+
+  async checkToken(req, res) {
+    if (req.body.userId) {
+      res.status(200).send({
+        success: true,
+      });
+    } else {
+      res.status(401).send({
+        success: false,
+        message: "token expired",
+      });
+    }
+  }
 }
 
 export default new AuthController();
