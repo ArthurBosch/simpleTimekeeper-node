@@ -100,7 +100,7 @@ class shiftController {
     } catch (err) {
       console.log(err);
       res.status(500).json({
-        success: falase,
+        success: false,
         message: err.message,
       });
     }
